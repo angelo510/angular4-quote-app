@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>debuggable summoner-detail test</title>
+
+  <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">-->
+  <!--<link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">-->
+  <!--<link rel="stylesheet" href="css/app.css"/>-->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css"/>-->
+  <!--<script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>-->
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sumInfoBox">.sumInfoBox
+          <div class="col-md-6">League Rank Icon</div>
+          <div class="col-md-6">Basic Summoner Info
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="matchHistBox">
+          <!-- Single Game Start -->
+          <div class="gameBox">
+            <div class="gameBoxHeader">
+              <div class="gameBoxHeaderLeft">
+                <span class="matchType">Ranked Solo 5v5</span>
+                <span class="matchAge">3 days ago</span>
+                <span class="ipEarned">Earned 75 IP</span>
+              </div>
+              <div class="gameBoxHeaderRight">
+                <span class="matchDuration">40m 20s</span>
+                <span class="matchWin">Victory</span>
+              </div>
+            </div>
+            <div class="gameBoxContent">
+              <div class="gameBasicStats">
+                <div class="championAndSpells">
+                  <div class="championImage"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                  <div class="spells">
+                    <div class="spell1"><img src="http://img3.wikia.nocookie.net/__cb20140115125640/leagueoflegends/images/c/cc/Barrier.png" /></div>
+                    <div class="spell2"><img src="http://img2.wikia.nocookie.net/__cb20140115125838/leagueoflegends/images/2/21/Clairvoyance.png" /></div>
+                  </div>
+                  <div class="championName">Aatrox</div>
+                </div>
+                <div class="gameStats">
+                  <div class="kda">
+                    <span class="kills">2</span> /
+                    <span class="deaths">1</span> /
+                    <span class="assists">1</span>
+                  </div>
+                  <div class="kdaRatio">
+                    <span class="kdaRatioText">3.0:1</span> KDA
+                  </div>
+                </div>
+                <div class="gameStats2">
+                  <div class="level">Level <span class="levelValue">10</span></div>
+                  <div class="cs"><span class="csValue">300</span> CS</div>
+                  <div class="gold"><span class="goldValue">13.2k</span> Gold</div>
+                  <div class="wards">
+                    <span class="sightWards">4</span>+<span class="visionWards">1</span> Wards
+                  </div>
+                </div>
+                <div class="items">
+                  <div class="item0"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item1"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item2"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item3"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item4"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item5"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                </div>
+                <div class="trinket">
+                  <div class="item6"><img src="http://img1.wikia.nocookie.net/__cb20131108024942/leagueoflegends/images/thumb/7/79/Farsight_Orb_item.jpg/32px-Farsight_Orb_item.jpg" /></div>
+                  <span class="caption">Trinket</span>
+                </div>
+                <div class="participants">
+                  <div class="teams">
+                    <div class="team">
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P1</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P2</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P3</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P4</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P5</div>
+                      </div>
+                    </div>
+                    <div class="team">
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B1</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B2</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B3</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B4</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B5</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Single Game End -->
+          <!-- Single Game Start -->
+          <div class="gameBox">
+            <div class="gameBoxHeader">
+              <span class="matchType">Ranked Solo 5v5</span>
+              <span class="matchAge">3 days ago</span>
+              <span class="ipEarned">Earned 75 IP</span>
+              <div class="gameBoxHeaderRight">
+                <span class="matchDuration">40m 20s</span>
+                <span class="matchWin">Victory</span>
+              </div>
+            </div>
+            <div class="gameBoxContent">
+              <div class="gameBasicStats">
+                <div class="championAndSpells">
+                  <div class="championImage"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                  <div class="spells">
+                    <div class="spell1"><img src="http://img3.wikia.nocookie.net/__cb20140115125640/leagueoflegends/images/c/cc/Barrier.png" /></div>
+                    <div class="spell2"><img src="http://img2.wikia.nocookie.net/__cb20140115125838/leagueoflegends/images/2/21/Clairvoyance.png" /></div>
+                  </div>
+                  <div class="championName">Aatrox</div>
+                </div>
+                <div class="gameStats">
+                  <div class="kda">
+                    <span class="kills">2</span> /
+                    <span class="deaths">1</span> /
+                    <span class="assists">1</span>
+                  </div>
+                  <div class="kdaRatio">
+                    <span class="kdaRatioText">3.0:1</span> KDA
+                  </div>
+                </div>
+                <div class="gameStats2">
+                  <div class="level">Level 10</div>
+                  <div class="cs">300 CS</div>
+                  <div class="gold">13.2k Gold</div>
+                  <div class="wards">
+                    <span class="sightWards">4</span>+<span class="visionWards">1</span>
+                  </div>
+                </div>
+                <div class="items">
+                  <div class="item0"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item1"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item2"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item3"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item4"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item5"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                </div>
+                <div class="trinket">
+                  <div class="item6"><img src="http://img1.wikia.nocookie.net/__cb20131108024942/leagueoflegends/images/thumb/7/79/Farsight_Orb_item.jpg/32px-Farsight_Orb_item.jpg" /></div>
+                  <span class="caption">Trinket</span>
+                </div>
+                <div class="participants">
+                  <div class="teams">
+                    <div class="team">
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P1</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P2</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P3</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P4</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P5</div>
+                      </div>
+                    </div>
+                    <div class="team">
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B1</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B2</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B3</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B4</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B5</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Single Game End -->
+          <!-- Single Game Start -->
+          <div class="gameBox">
+            <div class="gameBoxHeader">
+              <span class="matchType">Ranked Solo 5v5</span>
+              <span class="matchAge">3 days ago</span>
+              <span class="ipEarned">Earned 75 IP</span>
+              <div class="gameBoxHeaderRight">
+                <span class="matchDuration">40m 20s</span>
+                <span class="matchWin">Victory</span>
+              </div>
+            </div>
+            <div class="gameBoxContent">
+              <div class="gameBasicStats">
+                <div class="championAndSpells">
+                  <div class="championImage"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                  <div class="spells">
+                    <div class="spell1"><img src="http://img3.wikia.nocookie.net/__cb20140115125640/leagueoflegends/images/c/cc/Barrier.png" /></div>
+                    <div class="spell2"><img src="http://img2.wikia.nocookie.net/__cb20140115125838/leagueoflegends/images/2/21/Clairvoyance.png" /></div>
+                  </div>
+                  <div class="championName">Aatrox</div>
+                </div>
+                <div class="gameStats">
+                  <div class="kda">
+                    <span class="kills">2</span> /
+                    <span class="deaths">1</span> /
+                    <span class="assists">1</span>
+                  </div>
+                  <div class="kdaRatio">
+                    <span class="kdaRatioText">3.0:1</span> KDA
+                  </div>
+                </div>
+                <div class="gameStats2">
+                  <div class="level">Level 10</div>
+                  <div class="cs">300 CS</div>
+                  <div class="gold">13.2k Gold</div>
+                  <div class="wards">
+                    <span class="sightWards">4</span>+<span class="visionWards">1</span>
+                  </div>
+                </div>
+                <div class="items">
+                  <div class="item0"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item1"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item2"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item3"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item4"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                  <div class="item5"><img src="http://img3.wikia.nocookie.net/__cb20130319091621/leagueoflegends/images/thumb/3/3d/Trinity_Force_item.png/32px-Trinity_Force_item.png" /></div>
+                </div>
+                <div class="trinket">
+                  <div class="item6"><img src="http://img1.wikia.nocookie.net/__cb20131108024942/leagueoflegends/images/thumb/7/79/Farsight_Orb_item.jpg/32px-Farsight_Orb_item.jpg" /></div>
+                  <span class="caption">Trinket</span>
+                </div>
+                <div class="participants">
+                  <div class="teams">
+                    <div class="team">
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P1</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P2</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P3</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P4</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player P5</div>
+                      </div>
+                    </div>
+                    <div class="team">
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B1</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B2</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B3</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B4</div>
+                      </div>
+                      <div class="participant">
+                        <div class="championIcon"><img src="http://ddragon.leagueoflegends.com/cdn/4.4.3/img/champion/Aatrox.png" /></div>
+                        <div class="participantName">Player B5</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Single Game End -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

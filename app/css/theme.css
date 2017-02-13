@@ -1,0 +1,525 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+div {
+  border: 0px cornflowerblue dashed;
+}
+
+/* Search Bar */
+.searchBar {
+  margin-bottom: 10px;
+}
+
+/* Summoner Basic Info */
+.summonerInfoHeader {
+  height: 250px;
+  /*background-image: url(../img/summoner_info_header.png);*/
+  background-position: 50% -110%;
+  background-size: auto;
+  background-color: rgb(17, 17, 17);
+  opacity: 0.9;
+}
+
+.summonerInfoText {
+  bottom: 30px;
+  position: absolute;
+  color: white;
+}
+
+.summonerInfoName {
+  font-size: 28px;
+  vertical-align: middle;
+}
+
+.summonerInfoIcon {
+  margin-left: 20px;
+}
+
+.summonerInfoIcon > img {
+  height: 32px;
+  width: 32px;
+}
+
+.summonerInfoRegion {
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.summonerInfoLevel {
+  font-size: 12px;
+}
+
+/* Main Body Box */
+.mainBody {
+  margin-top: 10px;
+}
+
+/* Match History */
+
+.caption {
+  font-family: Arial;
+  font-size: .75em;
+  color: #898989;
+}
+
+.matchHistBox {
+
+}
+
+.gameBox {
+  margin: 3px 3px 3px 3px;
+  width: 700px;
+}
+
+/* Game Header */
+
+.gameBoxHeader {
+  font-family: Arial;
+  font-size: .85em;
+  height: 23px;
+  padding: 5px 5px 5px 5px;
+  text-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px;
+}
+
+.winHeader {
+  background-color: #9fceed;
+}
+
+.lossHeader {
+  background-color: #e3b3af;
+}
+
+.gameBoxHeaderLeft {
+  float: left;
+}
+
+.gameBoxHeaderRight {
+  right: 5px;
+  text-align: right;
+  display: inline;
+  float: right;
+}
+
+.matchType {
+  font-weight: bold;
+}
+
+.matchAge {
+  color: #747173;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.ipEarned {
+
+}
+
+/* Game Box Content */
+
+.gameBoxContent {
+
+}
+
+.winContent {
+  background-color: #b5d9f1;
+}
+
+.lossContent {
+  background-color: #eac5c2;
+}
+
+.gameBasicStats {
+  display: table;
+  height: 95px;
+  width: 100%;
+}
+
+.championAndSpells {
+  width: 105px;
+  /*height: 85px;*/
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px 5px 0px 10px;
+  position: relative;
+}
+
+.championName {
+  font-weight: bold;
+  font-size: .85em;
+}
+
+.championImage {
+  display: inline;
+}
+
+.championImage > img {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+}
+
+.championName {
+  width: 55px;
+  text-align: center;
+}
+
+.spells {
+  display: block;
+  float: right;
+  vertical-align: middle;
+}
+
+.spell1 > img {
+  height: 27px;
+  width: 27px;
+  margin-bottom: 5px;
+}
+
+.spell2 > img {
+  height: 27px;
+  width: 27px;
+}
+
+/* spell1 and spell2 */
+.spells > div > img {
+  border-radius: 10%;
+}
+
+.gameStats {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0px 0px 0px 5px;
+  width: 80px;
+}
+
+.kda {
+  text-align: center;
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.deaths {
+  color: red;
+}
+
+.kdaRatio {
+  text-align: center;
+  color: #898989;
+  font-size: .8em;
+}
+
+.kdaRatioText {
+  background-color: rgb(80, 113, 146);
+  padding: 2px 4px 2px 4px;
+  color: #ECF0F1;
+  font-size: 11px;
+  font-weight: bold;
+  text-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px;
+}
+
+.gameStats2 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-family: Arial;
+  font-size: .9em;
+  padding: 0px 5px 0px 5px;
+  width: 80px;
+}
+
+.levelValue {
+  font-weight: bold;
+}
+
+.csValue {
+  color: #197b1f;
+  font-weight: bold;
+}
+
+.goldValue {
+  color: #e75f21;
+  font-weight: bold;
+}
+
+.sightWards {
+  color: green;
+  font-weight: bold;
+}
+
+.visionWards {
+  color: #ff009b;
+  font-weight: bold;
+}
+
+game-items {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.items {
+  display: table-cell;
+  width: 125px;
+  /*height: 95px;*/
+  vertical-align: middle;
+  padding: 0px 5px 0px 0px;
+  text-align: center;
+}
+
+.itemBackImg {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+
+/* item0-5 */
+div.items > game-item > div {
+  height: 32px;
+  width: 32px;
+  display: inline-block;
+  margin: 1px;
+  background-size: 32px 32px;
+  border-radius: 10%;
+}
+
+/* item0-5 */
+/*div.items > div > img {*/
+  /*height: 32px;*/
+  /*width: 32px;*/
+  /*display: table-cell;*/
+  /*border-radius: 10%;*/
+/*}*/
+
+.trinket {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0px 10px 0px 5px;
+  width: 33px;
+}
+
+.item6 {
+  display: inline-block;
+  background-size: 32px 32px;
+  border-radius: 10%;
+}
+
+div.trinket > div > img {
+  width: 32px;
+  height: 32px;
+}
+
+.caption {
+  display: block;
+}
+
+game-participants {
+  /*display: table-cell;*/
+  vertical-align: middle;
+}
+
+.participants {
+  display: table-cell;
+  padding-left: 5px;
+}
+
+.teams {
+  /*width: 275px;*/
+  float: right;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.team {
+  width: 140px;
+  display: table-cell;
+}
+
+.championIcon {
+  display: inline-block;
+}
+
+.championIcon > img {
+  height: 16px;
+  width: 16px;
+}
+
+.participant {
+  padding: 0;
+  margin: 0;
+  height: 18px;
+  display: block;
+  /*overflow-x: hidden;*/
+  /*overflow-y: hidden;*/
+}
+
+.championIcon {
+  border-image-width: 0;
+}
+
+.championIcon > img {
+  border-image-width: 0;
+}
+
+.participantName {
+  display: inline-block;
+  font-size: 11px;
+  font-family: AppleSDGothicNeo-Regular, Dotum, AppleSDGothic, 'Apple SD Gothic Neo', AppleGothic;
+}
+
+/* sumInfo Box */
+
+.sumRating {
+  border: 1px solid rgb(207, 217, 219);
+  font-family: AppleSDGothicNeo-Regular, Dotum, AppleSDGothic, 'Apple SD Gothic Neo', AppleGothic;
+}
+
+.tierRankTextBig {
+  font-size: 12px;
+  color: rgb(22, 160, 133);
+  font-weight: bold;
+}
+
+.leaguePointsTextBig {
+  color: rgb(127, 140, 141);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.winLoseTextBig {
+  color: rgb(41, 128, 185);
+  font-size: 12px;
+}
+
+.leagueName {
+  color: rgb(127, 140, 141);
+  font-size: 11px;
+}
+
+/* Ranked Teams */
+
+.rankedTeam {
+  table-layout: fixed;
+  font-family: AppleSDGothicNeo-Regular, Dotum, AppleSDGothic, 'Apple SD Gothic Neo', AppleGothic;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-left: 1px solid;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 0px;
+  padding-right: 5px;
+  border-color: rgb(207, 217, 219);
+}
+
+.medal {
+  display: table-cell;
+  width: 50px;
+  vertical-align: middle;
+}
+
+.tierRankInfo {
+  display: table-cell;
+}
+
+.rankedTeam >  div > div > .medal > img {
+  height: 50px;
+  width: 50px;
+  display: inline;
+  margin-bottom: -15px;
+  margin-top: -5px;
+}
+
+.tierRank {
+  display: table-cell;
+  font-size: 11px;
+  font-family: AppleSDGothicNeo-Regular, Dotum, AppleSDGothic, 'Apple SD Gothic Neo', AppleGothic;
+  width: 75px;
+}
+
+.tierRankText {
+  display: block;
+  color: rgb(22, 160, 133);
+  font-weight: bold;
+}
+
+.leaguePoints {
+  display: block;
+}
+
+.typeTeam {
+  display: table-cell;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.teamName {
+  display: block;
+}
+
+.teamNameText {
+  display: inline;
+  white-space: nowrap;
+}
+
+.statSummaryType {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.teamName {
+  font-size: 11px;
+}
+
+.leaguePoints {
+
+}
+
+.winLose {
+  display: block;
+  font-size: 11px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.total {
+  color: rgb(22, 160, 133);
+}
+
+.wins {
+  color: rgb(41, 128, 185);
+}
+
+.losses {
+  color: rgb(192, 57, 43);
+}
+
+.winRatio {
+
+}
