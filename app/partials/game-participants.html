@@ -1,0 +1,20 @@
+<div class="participants">
+  <div class="teams">
+    <div class="team">
+      <div class="participant" ng-repeat="idx in team100">
+        <div class="championIcon">
+          <img src="http://ddragon.leagueoflegends.com/cdn/4.14.2/img/champion/{{idx.champion.key}}.png" />
+        </div>
+        <div class="participantName">{{idx.summoner.name}}</div>
+      </div>
+    </div>
+    <div class="team">
+      <div class="participant" ng-repeat="idx in team200">
+        <div class="championIcon">
+          <img src="http://ddragon.leagueoflegends.com/cdn/4.14.2/img/champion/{{idx.champion.key}}.png" />
+        </div>
+        <div class="participantName">{{idx.summoner.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>
