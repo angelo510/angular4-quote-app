@@ -1,0 +1,31 @@
+<div>
+  <div ng-controller="SummonerLookupCtrl">
+    <div class="searchBar" ng-include="'partials/summoner-lookup.html'"></div>
+    <div ng-show="loading">
+      taskID: {{taskID}}
+      <div us-spinner></div>
+    </div>
+  </div>
+
+
+
+  <summoner-basic-info ng-show="summonerInfo.name"></summoner-basic-info>
+
+  <div class="mainBody container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sumInfoBox">
+          <div class="sumInfoBoxContent">
+            <solo-queue ng-show="soloQueue"></solo-queue>
+            <ranked-teams ng-show="teams"></ranked-teams>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="matchHistBox">
+          <recent-game ng-repeat="game in games.results"></recent-game>
+        </div> <!-- matchHistBox -->
+      </div> <!-- col-md-9 -->
+    </div> <!-- row -->
+  </div> <!-- container -->
+</div>
