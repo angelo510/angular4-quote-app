@@ -1,0 +1,45 @@
+<div class="gameBox">
+  <div class="gameBoxHeader {{game.stats.win | winOrLoss:'class'}}Header">
+    <div class="gameBoxHeaderLeft">
+      <span class="matchType">{{game.sub_type | subType}}</span>
+      <span class="matchAge">{{game.create_date | date:'yyyy-MM-dd HH:mm'}}</span>
+      <span class="ipEarned">{{game.ip_earned}} IP</span>
+    </div>
+    <div class="gameBoxHeaderRight">
+      <span class="matchDuration">{{game.stats.time_played | gameDuration}} minute</span>
+      <span class="matchWin">{{game.stats.win | winOrLoss:'str'}}</span>
+    </div>
+  </div>
+  <div class="gameBoxContent {{game.stats.win | winOrLoss:'class'}}Content">
+    <div class="gameBasicStats">
+      <div class="championAndSpells">
+        <div class="championImage"><img src="http://ddragon.leagueoflegends.com/cdn/4.14.2/img/champion/{{game.champion_key}}.png" /></div>
+        <div class="spells">
+          <div class="spell1"><img src="../img/spell_{{game.spell_1}}.png" /></div>
+          <div class="spell2"><img src="../img/spell_{{game.spell_2}}.png" /></div>
+        </div>
+        <div class="championName">{{game.champion_id | championNameDD}}</div>
+      </div>
+      <div class="gameStats">
+        <div class="kda">
+          <span class="kills">{{game.stats.champions_killed | nullToZero}}</span> /
+          <span class="deaths">{{game.stats.num_deaths | nullToZero}}</span> /
+          <span class="assists">{{game.stats.assists | nullToZero}}</span>
+        </div>
+        <div class="kdaRatio">
+          <span class="kdaRatioText">{{game.stats.champions_killed | kdaRatio:game.stats.num_deaths:game.stats.assists}}</span> KDA
+        </div>
+      </div>
+      <div class="gameStats2">
+        <div class="level">Level <span class="levelValue">{{game.stats.level}}</span></div>
+        <div class="cs"><span class="csValue">{{game.stats.minions_killed + game.stats.neutral_minions_killed}}</span> CS</div>
+        <div class="gold"><span class="goldValue">{{game.stats.gold_earned / 1000 | number:0 }}k</span> Gold</div>
+        <div class="wards">
+          <span class="sightWards">{{game.stats.sight_wards_bought | nullToZero}}</span>+<span class="visionWards">{{game.stats.vision_wards_bought | nullToZero}}</span> Wards
+        </div>
+      </div>
+      <game-items game="game"></game-items>
+      <game-participants game="game"></game-participants>
+    </div>
+  </div>
+</div>
