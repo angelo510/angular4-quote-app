@@ -1,0 +1,52 @@
+[
+  {
+    "movieId": 1,
+    "movieName": "Fight Club",
+    "code": "mov-01",
+    "releaseDate": "21 September 1999",
+    "description": "Discontented with his capitalistic lifestyle, a white-collared insomniac forms an underground fight club with Tyler, a careless soap salesman. The project soon spirals down into something sinister.",
+    "price": 199.95,
+    "imdbRating": 8.8,
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BZGY5Y2RjMmItNDg5Yy00NjUwLThjMTEtNDc2OGUzNTBiYmM1XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_UX182_CR0,0,182,268_AL_.jpg"
+  },
+  {
+    "movieId": 2,
+    "movieName": "Saving Private Ryan",
+    "code": "mov-02",
+    "releaseDate": "24 July 1998",
+    "description": "During the Normandy invasion of World War II, Captain John Miller is assigned the task of searching for Private James Ryan, whose three brothers have already been killed in the war.",
+    "price": 199.95,
+    "imdbRating": 8.6,
+    "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_UY1200_CR93,0,630,1200_AL_.jpg"
+  },
+  {
+    "movieId": 3,
+    "movieName": "Andaz Apna Apna",
+    "code": "mov-03",
+    "releaseDate": "11 April 1994",
+    "description": "Amar and Prem belong to middle-class families but dream big. Gaiety ensues when they both vie to win over a multi-millionaire's daughter to become her heritor.",
+    "price": 299.95,
+    "imdbRating": 8.3,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/15/Andaz_Apna_Apna.jpg"
+  },
+  {
+    "movieId": 4,
+    "movieName": "Jobs",
+    "code": "mov-04",
+    "releaseDate": "23 August 2013",
+    "description": "After revolutionizing the home computers, Steve Jobs and his friend Steve Wozniak co-found Apple Inc. But as a leader and a visionary, Jobs' rocky tenure leads to his ouster from the company.",
+    "price": 149.95,
+    "imdbRating": 5.9,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/e/e0/Jobs_%28film%29.jpg"
+  },
+  {
+    "movieId": 5,
+    "movieName": "Return of the Jedi",
+    "code": "mov-05",
+    "releaseDate": "25 May 1983",
+    "description": "Luke Skywalker attempts to bring his father back to the light side of the 'Force' while the rebels hatch a plan to destroy the second Death Star.",
+    "price": 349.95,
+    "imdbRating": 8.4,
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/b/b2/ReturnOfTheJediPoster1983.jpg"
+  }
+]
