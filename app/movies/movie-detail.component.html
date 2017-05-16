@@ -1,0 +1,54 @@
+<div class='panel panel-info' *ngIf='movie'>
+    <div class='panel-heading' style='font-size:large'>
+        {{pageTitle + ': ' + movie.movieName}}
+    </div>
+
+    <div class='panel-body'>
+        <div class='row'>
+            <div class='col-md-6'>
+                <div class='row'>
+                    <div class='col-md-3'>Name:</div>
+                    <div class='col-md-6'>{{movie.movieName}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Code:</div>
+                    <div class='col-md-6'>{{movie.code}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Description:</div>
+                    <div class='col-md-6'>{{movie.description}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Release Date:</div>
+                    <div class='col-md-6'>{{movie.releaseDate}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Price:</div>
+                    <div class='col-md-6'>{{movie.price|currency:'INR':true}}</div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>Imdb Rating:</div>
+                    <div class='col-md-6'>
+                        <ai-star [rating]='movie.imdbRating'
+                                (ratingClicked)='onRatingClicked($event)'>
+                        </ai-star>
+                    </div>
+                </div>
+            </div>
+
+            <div class='col-md-6'>
+                <img class='center-block img-responsive' 
+                     [style.width.px]='200' 
+                     [style.margin.px]='2' 
+                     [src]='movie.imageUrl'
+                     [title]='movie.movieName'>
+            </div>
+        </div>
+    </div>
+
+    <div class='panel-footer'>
+        <a class='btn btn-info' (click)='onBack()' style='width:80px'>
+            <i class='glyphicon glyphicon-chevron-left'></i> Back
+        </a>
+    </div>
+</div>
