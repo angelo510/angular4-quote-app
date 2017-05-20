@@ -1,0 +1,46 @@
+<div class="panel panel-info">
+	<div class="panel-heading">
+		{{pageTitle}}
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-2">Filter By:</div>
+			<div class="col-md-4">
+				<input type="text" [(ngModel)] = 'listFilter'>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Filtered By: {{listFilter}}</h3>
+			</div>
+		</div>
+		<div class="table-responsive">
+			<table class="table" *ngIf = 'movies && movies.length'>
+				<thead>
+					<tr>
+						<th>
+							<button class="btn btn-info" (click) = 'toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</button>
+						</th>
+						<th>Movie</th>
+						<th>Code</th>
+						<th>Release Date</th>
+						<th>Price</th>
+						<th>Imdb Rating</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor = 'let movie of movies | movieFilter : listFilter'>
+						<td>
+						<img [src] = 'movie.imageUrl' [title] = 'movie.movieName' [style.width.px] = 'imageWidth' [style.margin.px] = 'imageMargin' *ngIf = 'showImage'>
+						</td>
+						<td><a [routerLink] = "['/movie', movie.movieId]">{{ movie.movieName }}</a></td>
+						<td>{{ movie.code | lowercase }}</td>
+						<td>{{ movie.releaseDate }}</td>
+						<td>{{ movie.price | currency: 'INR' : true : '1.2-2' }}</td>
+						<td><ai-star [rating] = 'movie.imdbRating' (ratingClicked)='onRatingClicked($event)'></ai-star></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
