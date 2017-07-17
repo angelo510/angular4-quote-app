@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HttpModule } from '@angular/http';
 import {
   NgModule,
@@ -26,7 +27,15 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
+
+import { SignaturePadModule } from 'angular2-signaturepad';
+import { SignatureFieldComponent } from './views/home/signature-field/signature-field.component';
+import { MyDatePickerModule } from 'mydatepicker';
+
 import { HomeComponent } from './views/home';
+import { ConfirmComponent } from './views/confirm';
+import { ManagerComponent } from './views/manager';
+import { SidebarComponent } from './views/components/sidebar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import '../styles/styles.scss';
@@ -52,6 +61,10 @@ type StoreType = {
   declarations: [
     AppComponent,
     HomeComponent,
+    ConfirmComponent,
+    ManagerComponent,
+    SidebarComponent,
+    SignatureFieldComponent,
   ],
   /**
    * Import Angular's modules.
@@ -62,6 +75,9 @@ type StoreType = {
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
+    ReactiveFormsModule,
+    SignaturePadModule,
+    MyDatePickerModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
