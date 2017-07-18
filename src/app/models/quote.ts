@@ -7,6 +7,11 @@ export interface IQuoteData {
   account: IAccountInfo;
   contact: IContactInfo;
   quote_items: IQuoteItems;
+  quote: IQuoteExpireDate;
+}
+
+export interface IQuoteExpireDate {
+  expiration_date: String;
 }
 
 export interface IAccountInfo {
@@ -19,11 +24,18 @@ export interface IAccountInfo {
 
 export interface IContactInfo {
   phone: String;
-  name: String;
+  first_name: String;
+  last_name: String;
   email: String;
 }
 
 export interface IQuoteItem {
+  items: IQuoteDetails[];
+  sub_total: Number;
+  total: Number;
+}
+
+export interface IQuoteDetails {
   name: string;
   tax_rate: Number;
   description: String;
@@ -32,6 +44,6 @@ export interface IQuoteItem {
 }
 
 export interface IQuoteItems {
-  one_time_items: IQuoteItem[];
-  monthly_items: IQuoteItem[];
+  one_time: IQuoteItem;
+  monthly: IQuoteItem;
 }
