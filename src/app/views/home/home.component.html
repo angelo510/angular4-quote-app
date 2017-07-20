@@ -1,0 +1,171 @@
+<div *ngIf="isLoading" class="loading">
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+  </div>
+</div>
+<div *ngIf="!isLoading" class="container">
+  <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+  <div class="header-section pb-1 pt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="/assets/img/logo.png">
+      </div>
+      <div class="col-md-4 ml-auto pt-2">
+        <h3 class="order-form-title">Reference {{quoteId}}</h3>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="main-content">
+    <div class="row">
+      <!-- Left content form -->
+      <div class="col-md-8">
+        <div class="content-section rounded p-4 mb-4">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="prepare-block">
+                <h5>{{quote.data.account.account_name}}</h5>
+                <p class="item-text m-0">{{quote.data.account.address1}}</p>
+                <p class="item-text m-0">
+                  {{quote.data.account.city}} 
+                  {{quote.data.account.state}} 
+                  {{quote.data.account.country}}</p>
+              </div>
+            </div>
+            <div class="col-md-3 ml-auto">
+              <div class="reference-block">
+                <h5 class="reference-text">Reference</h5>
+                <p class="item-text m-0">{{quoteId}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="monthly-items-block p-4">
+          <div class="row">
+            <h4 class="pb-3">Monthly Items</h4>
+            <div *ngFor="let monthlyItem of monthlyItems" class="monthly-items-table w-100">
+              <div class="row">
+                <div class="col-md-1">
+                  <h5>Qty</h5>
+                  <p class="item-text">{{monthlyItem.quantity}}</p>
+                </div>
+                <div class="col-md-6">
+                  <h5>Description</h5>
+                  <p class="item-text">{{monthlyItem.name}}</p>
+                </div>
+                <div class="col-md-3">
+                  <h5>Price</h5>
+                  <p class="item-text">{{monthlyItem.unit_price | number: '1.2-2'}}</p>
+                  <p class="item-text">Sub Total</p>
+                  <p class="item-text">GST</p>
+                  <p class="item-text"><strong>Monthly Total</strong></p>
+                </div>
+                <div class="col-md-2">
+                  <h5>Total</h5>
+                  <p class="item-text">{{monthlyItem.unit_price * monthlyItem.quantity | number: '1.2-2'}}</p>
+                  <p class="item-text">{{monthlyItem.unit_price | number: '1.2-2'}}</p>
+                  <p class="item-text">{{monthlyItem.unit_price * monthlyItem.tax_rate | number: '1.2-2'}}</p>
+                  <p class="item-text"><strong>{{monthlyItem.unit_price * monthlyItem.tax_rate + monthlyItem.unit_price | number: '1.2-2'}}</strong></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="onetime-items-block p-4">
+            <div class="row">
+              <h4 class="pb-3">One-time Items</h4>
+              <div *ngFor="let oneTimeItem of oneTimeItems" class="onetime-items-table w-100">
+                <div class="row">
+                  <div class="col-md-1">
+                    <h5>Qty</h5>
+                    <p class="item-text">{{oneTimeItem.quantity}}</p>
+                  </div>
+                  <div class="col-md-6">
+                    <h5>Description</h5>
+                    <p class="item-text">{{oneTimeItem.name}}</p>
+                  </div>
+                  <div class="col-md-3">
+                    <h5>Unit Price</h5>
+                    <p class="item-text">{{oneTimeItem.unit_price | number: '1.2-2'}}</p>
+                    <p class="item-text">Sub Total</p>
+                    <p class="item-text">GST</p>
+                    <p class="item-text"><strong>One-Time Total</strong></p>
+                  </div>
+                  <div class="col-md-2">
+                    <h5>Extended</h5>
+                    <p class="item-text">{{oneTimeItem.unit_price * oneTimeItem.quantity | number: '1.2-2'}}</p>
+                    <p class="item-text">{{oneTimeItem.unit_price | number: '1.2-2'}}</p>
+                    <p class="item-text">{{oneTimeItem.unit_price * oneTimeItem.tax_rate | number: '1.2-2'}}</p>
+                    <p class="item-text"><strong>{{oneTimeItem.unit_price * oneTimeItem.tax_rate + oneTimeItem.unit_price | number: '1.2-2'}}</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <!-- Left content form end-->
+      <!-- Right form -->    
+      <div class="col-md-4">
+        <div class="side-section">
+          <div class="pdf-viewer rounded p-4 mb-4">
+            <p class="item-text">
+              On submission, you will receive a confirmation email summarising your order, with all applicable terms for your reference.
+            </p>
+            <p class="item-text">
+              By preoceeding with this order, you confirm that you have read and understood the following.
+            </p>
+            <div class="general-terms">
+              <img src="http://www.adobe.com/content/dam/acom/en/legal/images/badges/Adobe_PDF_file_icon_32x32.png">
+              <a href="./../../../assets/pdfs/GeneralTerms-2017-01.pdf" target="_blank"><strong>General Terms</strong></a>
+            </div>
+            <div class="product-terms">
+              <img src="http://www.adobe.com/content/dam/acom/en/legal/images/badges/Adobe_PDF_file_icon_32x32.png">
+              <a href="./../../../assets/pdfs/ManagedProductTerms-VoiceData-2017-01.pdf" target="_blank"><strong>Managed Product Terms</strong></a>
+            </div>
+          </div>
+          <div class="questions rounded p-4">
+            <h5>Questions?</h5>
+            <p class="item-text">Your contact is {{quote.data.contact.name}}</p>
+            <h5>Phone</h5>
+            <p class="item-text">{{quote.data.contact.phone}}</p>
+            <h5>Email</h5>
+            <p class="item-text">{{quote.data.contact.email}}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Right form end -->
+    </div>
+    <div class="row justify-content-end">
+      <div class="col-md-2">
+        <div class="p-5">
+          <button type="button" class="btn btn-success btn-lg" (click)="OnProceed(content)">Proceed</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-body">
+    <div class="container">
+      <div class="row">
+        <div class="legal-text pl-3 pt-5">
+          <textarea name="legal-text" id="legal-text" cols="100" rows="20">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac
+          </textarea>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-3">
+          <div class="p-3">
+            <button type="button" class="btn btn-success btn-lg" data-loading-text="<i class='fa fa-spinner fa-spin '></i> Processing Order" (click)="OnAccept()">I Accept</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
