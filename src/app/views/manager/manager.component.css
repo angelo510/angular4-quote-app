@@ -1,0 +1,27 @@
+.navbar-header {
+    display: inline-block;
+}
+.navbar-header img {
+    mix-blend-mode: multiply;
+    padding: 10px;
+}
+.navbar-collapse {
+    margin-top: 20px;
+    float: right;
+}
+.navbar-collapse ul.navbar-nav {
+    flex-direction: row;
+}
+
+.navbar-collapse ul.navbar-nav li{
+    margin-right: 15px;
+}
+
+.navbar .navbar-nav [class^="pe"] {
+    margin-top: -5px;
+}
+
+.navbar-nav > li > a {
+    padding: 13px 7px;
+    vertical-align: top;
+}
