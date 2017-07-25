@@ -1,11 +1,10 @@
-import { NcgAppPageObject } from './app.po';
-import {} from 'jasmine';
+import { MaterialDashboardAngularPage } from './app.po';
 
-describe('WebQuotes App', () => {
-  let page: NcgAppPageObject;
+describe('material-dashboard-angular App', () => {
+  let page: MaterialDashboardAngularPage;
 
   beforeEach(() => {
-    page = new NcgAppPageObject();
+    page = new MaterialDashboardAngularPage();
   });
 
   it('should display message saying app works', () => {

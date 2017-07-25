@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class NcgAppPageObject {
+export class MaterialDashboardAngularPage {
   navigateTo() {
     return browser.get('/');
   }
