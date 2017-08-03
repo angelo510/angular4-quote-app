@@ -1,37 +1,19 @@
-/**
- * Angular 2 decorators and services
- */
-import {
-  Component,
-  OnInit,
-  ViewEncapsulation
-} from '@angular/core';
-import { AppState } from './app.service';
+import { Component, OnInit } from '@angular/core';
+import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 
-/**
- * App Component
- * Top Level Component
- */
+declare const $: any;
+
 @Component({
-  selector: 'app',
-  encapsulation: ViewEncapsulation.None,
-  styleUrls: [
-    './app.component.css'
-  ],
-  template: `
-    <main>
-      <router-outlet></router-outlet>
-    </main> 
-    `
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
 
-  constructor(
-    public appState: AppState
-  ) {}
+  constructor(public location: Location) {}
 
-  public ngOnInit() {
-    //
+  ngOnInit() {
+      $.material.options.autofill = true;
+      $.material.init();
   }
-
 }
