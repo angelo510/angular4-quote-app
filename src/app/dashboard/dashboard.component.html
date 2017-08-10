@@ -1,0 +1,177 @@
+<mat-spinner *ngIf="isLoading" color="warn" class="loading-spinner"></mat-spinner>
+<div *ngIf="!isLoading" class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header" data-background-color="green">
+                                <i class="material-icons">business</i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Companay</p>
+                                <h3 class="title">{{quote.data.account.account_name}}</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">location_on</i> {{quote.data.account.city}} {{quote.data.account.state}} {{quote.data.account.country}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header" data-background-color="blue">
+                                <i class="material-icons">info_outline</i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">Reference</p>
+                                <h3 class="title">{{quoteId}}</h3>
+                            </div>
+                            <div class="card-footer">
+                                <div class="stats">
+                                    <i class="material-icons">date_range</i> Expires on {{expireDate}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Monthly Items</h4>
+                                <p class="category">Monthly Items List</p>
+                            </div>
+                            <div class="card-content table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="text-warning">
+                                        <tr>
+                                            <th>Qty</th>
+                                            <th>Description</th>
+                                            <th>Price</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let monthlyItem of monthly.items">
+                                            <td>{{monthlyItem.quantity}}</td>
+                                            <td>{{monthlyItem.name}}</td>
+                                            <td>{{monthlyItem.unit_price | number: '1.2-2'}}</td>
+                                            <td>{{monthlyItem.unit_price * monthlyItem.quantity | number: '1.2-2'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="text-success">SubTotal</td>
+                                            <td class="text-success">{{monthly.sub_total | number: '1.2-2'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="text-success">Monthly Total</td>
+                                            <td class="text-success">{{monthly.total | number: '1.2-2'}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="green">
+                                <h4 class="title">One-time Items</h4>
+                                <p class="category">One-time Items List</p>
+                            </div>
+                            <div class="card-content table-responsive">
+                                <table class="table table-hover">
+                                    <thead class="text-warning">
+                                        <tr>
+                                            <th>Qty</th>
+                                            <th>Description</th>
+                                            <th>Price</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let oneTimeItem of oneTime.items">
+                                            <td>{{oneTimeItem.quantity}}</td>
+                                            <td>{{oneTimeItem.name}}</td>
+                                            <td>{{oneTimeItem.unit_price | number: '1.2-2'}}</td>
+                                            <td>{{oneTimeItem.unit_price * oneTimeItem.quantity | number: '1.2-2'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="text-success">SubTotal</td>
+                                            <td class="text-success">{{oneTime.sub_total | number: '1.2-2'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="text-success">One-time Total</td>
+                                            <td class="text-success">{{oneTime.total | number: '1.2-2'}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card card-profile">
+                            <div class="card-avatar">
+                                <a>
+                                    <img class="img" src="../assets/img/faces/marc.png" />
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="category text-gray">{{quote.data.contact.first_name}} {{quote.data.contact.lastname}}</h4>
+                                <h3 class="card-title">Got Questions?</h3>
+                                <div class="row">
+                                    <div class="col-sm-8 col-sm-offset-2">
+                                        <p class="category text-gray"><strong>{{quote.data.contact.first_name}}</strong> has got answers!</p>
+                                        <p class="category text-gray"><strong>{{quote.data.contact.first_name}}</strong> can be contacted by phone on <strong>{{quote.data.contact.phone}}</strong>, or by email at <strong>{{quote.data.contact.email}}</strong>.</p>
+                                        <p class="category text-gray">Alternatively, our team can be contacted on <strong>1300 556 700</strong> between 9:00 AM and 5:00
+                                            PM AEST.</p>
+                                    </div>
+                                </div>
+                                <a href="#pablo" class="btn btn-info">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="card card-info">
+                            <div class="card-header" data-background-color="red">
+                            </div>
+                            <div class="card-content">
+                                <div class="row">
+                                    <div class="col-sm-10 col-sm-offset-1">
+                                        <h5>Comment</h5>
+                                        <p class="category text-gray"><strong>{{quote.data.quote.comment}}</strong></p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-1">
+                        <button class="btn btn-success btn-lg" (click)="goProceed()">Proceed</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
