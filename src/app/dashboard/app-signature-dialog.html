@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>Signature Dialog</h2>
+<mat-dialog-content>
+    <div #sigContainer class="signature-container">
+        <form [formGroup]="form">
+            <div class="sig-container">
+                <div fxLayout="row">
+                    <app-signature-field formControlName="signatureField" signature="signatureValue"></app-signature-field>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-6">
+            <div class="row">
+                <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Name</label>
+                    <input type="text" class="form-control" >
+                </div>
+                <div class="form-group form-black label-floating is-empty m-0">
+                    <label class="control-label">Position</label>
+                    <input type="text" class="form-control" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-6">
+            <div class="row">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions class="pull-right">
+    <button mat-button class="btn btn-info" (click)="onAccept()" [mat-dialog-close]="true" tabindex="1">I Accept</button>
+    <button mat-button class="btn btn-danger" mat-dialog-close tabindex="-1">Cancel</button>
+</mat-dialog-actions>
