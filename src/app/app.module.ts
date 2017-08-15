@@ -1,152 +1,128 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { HttpModule } from '@angular/http';
-import {
-  NgModule,
-  ApplicationRef
-} from '@angular/core';
-import {
-  removeNgStyles,
-  createNewHosts,
-  createInputTransfer
-} from '@angularclass/hmr';
-import {
-  RouterModule,
-  PreloadAllModules
-} from '@angular/router';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-/*
- * Platform and Environment providers/directives/pipes
- */
-import { ENV_PROVIDERS } from './environment';
-import { ROUTES } from './app.routes';
-// App is our top level component
-import { AppComponent } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InternalStateType } from './app.service';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule,
+} from '@angular/material';
+import {CdkTableModule} from '@angular/cdk/table';
 
 import { SignaturePadModule } from 'angular2-signaturepad';
-import { SignatureFieldComponent } from './views/home/signature-field/signature-field.component';
-import { MyDatePickerModule } from 'mydatepicker';
 
-import { HomeComponent } from './views/home';
-import { ConfirmComponent } from './views/confirm';
-import { ManagerComponent } from './views/manager';
-import { SidebarComponent } from './views/components/sidebar';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './app.routing';
+import { ComponentsModule } from './components/components.module';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
+import { AppComponent } from './app.component';
 
-// Application wide providers
-const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS,
-  AppState
-];
+import { DashboardComponent, ProceedDialogComponent, SignatureDialogComponent } from './dashboard/dashboard.component';
+import { TemplateSettingComponent } from './template-setting/template-setting.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { TableListComponent } from './table-list/table-list.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
-type StoreType = {
-  state: InternalStateType,
-  restoreInputValues: () => void,
-  disposeOldHosts: () => void
-};
+import { SignatureFieldComponent } from './components/signature-field/signature-field.component';
 
-/**
- * `AppModule` is the main entry point into Angular2's bootstraping process
- */
 @NgModule({
-  bootstrap: [ AppComponent ],
+  exports: [
+    CdkTableModule,
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+  ]
+})
+export class QuoteMaterialModule {}
+
+@NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ConfirmComponent,
-    ManagerComponent,
-    SidebarComponent,
+    DashboardComponent,
+    UserProfileComponent,
+    TemplateSettingComponent,
+    TableListComponent,
+    NotificationsComponent,
+    ProceedDialogComponent,
+    SignatureDialogComponent,
     SignatureFieldComponent,
+    ConfirmComponent,
   ],
-  /**
-   * Import Angular's modules.
-   */
+  entryComponents: [
+    ProceedDialogComponent,
+    SignatureDialogComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    NgbModule.forRoot(),
     ReactiveFormsModule,
+    QuoteMaterialModule,
     SignaturePadModule,
-    MyDatePickerModule,
-    RouterModule.forRoot(ROUTES, {
-      useHash: Boolean(history.pushState) === false,
-      preloadingStrategy: PreloadAllModules
-    })
+    ComponentsModule,
+    RouterModule,
+    AppRoutingModule
   ],
-  /**
-   * Expose our Services and Providers into Angular's dependency injection.
-   */
-  providers: [
-    ENV_PROVIDERS,
-    APP_PROVIDERS
-  ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-
-  constructor(
-    public appRef: ApplicationRef,
-    public appState: AppState
-  ) {}
-
-  public hmrOnInit(store: StoreType) {
-    if (!store || !store.state) {
-      return;
-    }
-    console.log('HMR store', JSON.stringify(store, null, 2));
-    /**
-     * Set state
-     */
-    this.appState._state = store.state;
-    /**
-     * Set input values
-     */
-    if ('restoreInputValues' in store) {
-      let restoreInputValues = store.restoreInputValues;
-      setTimeout(restoreInputValues);
-    }
-
-    this.appRef.tick();
-    delete store.state;
-    delete store.restoreInputValues;
-  }
-
-  public hmrOnDestroy(store: StoreType) {
-    const cmpLocation = this.appRef.components.map((cmp) => cmp.location.nativeElement);
-    /**
-     * Save state
-     */
-    const state = this.appState._state;
-    store.state = state;
-    /**
-     * Recreate root elements
-     */
-    store.disposeOldHosts = createNewHosts(cmpLocation);
-    /**
-     * Save input values
-     */
-    store.restoreInputValues  = createInputTransfer();
-    /**
-     * Remove styles
-     */
-    removeNgStyles();
-  }
-
-  public hmrAfterDestroy(store: StoreType) {
-    /**
-     * Display new elements
-     */
-    store.disposeOldHosts();
-    delete store.disposeOldHosts;
-  }
-
-}
+export class AppModule { }
